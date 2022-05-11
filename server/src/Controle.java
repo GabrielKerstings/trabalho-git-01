@@ -10,19 +10,20 @@ public class Controle {
 
     public boolean criarUsuario(String nome, String tipo) {
 
+        countUsuario++;
         Usuario aux = new Usuario();
         aux.identificador = countUsuario;
         aux.nome = nome;
         aux.tipo = tipo;
-
         listaUsuarios.add(aux);
+        
         return true;
 
     }
 
     public boolean criarPost(Usuario user, String msg) {
         
-        
+        countPost++;
         Postagem p = new Postagem();
         p.donoPostagem = user;
         p.conteudo = msg;
@@ -30,7 +31,7 @@ public class Controle {
         p.id = countPost;
 
         listaPostagem.add(p);
-        countPost++
+        
 
         return true;
     
@@ -51,8 +52,6 @@ public class Controle {
         return false;
 
     }
-
-
 
     public boolean addComentario(Postagem post, Usuario user) {
 
