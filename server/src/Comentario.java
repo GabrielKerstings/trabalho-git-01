@@ -1,10 +1,10 @@
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Comentario {
 
     public Usuario dono;
     public String conteudo;
-    public Date dataHora;
+    public LocalDateTime dataHora;
 
     
 }

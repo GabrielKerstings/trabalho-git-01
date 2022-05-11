@@ -1,10 +1,13 @@
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+
 public class Postagem {
 
 
     public Usuario donoPostagem;
-    public Date dataHora;
+    public LocalDateTime dataHora;
     public String conteudo;
-    public ArrayList[Comentario] comentariosPostagem = new ArrayList[100];
+    public int id;
+    public ArrayList[Comentario] comentarios = new ArrayList[100];
 
 }
