@@ -1,6 +1,6 @@
 # **Manual de instalação e intruções de uso**
 
-> Desenvolvido por: Guilherme Carvalho Silva, Emanuel Pereira (insira seu nome aqui...)
+> Desenvolvido por: Guilherme Carvalho Silva, Emanuel Pereira, Denilson Kersting Araujo, (insira seu nome aqui...)
 
 # Primeiros passos
 
