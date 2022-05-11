@@ -1,8 +1,8 @@
 public class Controle {
 
 
-    ArrayList<Postagem> listaPostagem = new ArrayList[500];
     ArrayList<Postagem> listaUsuarios = new ArrayList[500];
+    
     private int countPost = 0;
     private int countUsuario = 0;
 
@@ -24,14 +24,13 @@ public class Controle {
     public boolean criarPost(Usuario user, String msg) {
         
         countPost++;
+
         Postagem p = new Postagem();
-        p.donoPostagem = user;
         p.conteudo = msg;
         p.dataHora = LocalDateTime.now();
         p.id = countPost;
 
-        listaPostagem.add(p);
-        
+        user.postagens.add(p);
 
         return true;
     
@@ -40,11 +39,13 @@ public class Controle {
     
     public boolean excluirPostagem(Postagem post, Usuario user, String msg) {
     
-        for(Postagem p : listaPostagem) {
-            if(p.id == post.id) {
-                if(post.user.id == user.id) {
-                    listaPostagem.remove(p);
-                    return true;
+        for(Usuario s : listaUsuarios) {
+            for(Postagem p : s.postagens) {
+                if(p.id == post.id) {
+                    if(post.user.id == user.id) {
+                        s.postagens.remove(p);
+                        return true;
+                    }
                 }
             }
         }
@@ -60,26 +61,29 @@ public class Controle {
         c.conteudo = msg;
         c.dataHora = LocalDateTime.now();
 
-
-        for(Postagem p : listaPostagem) {
-            if(p.id == post.id) {
-                p.comentarios.add(c)
-                return true;
+        for(Usuario s : listaUsuarios) {
+            for(Postagem p : s.postagens) {
+                if(p.id == post.id) {
+                    p.comentarios.add(c)
+                    return true;
+                }
+                
             }
-            
         }
         return false;
     }
 
     public boolean excluirComentario(Postagem post, Usuario user, Comentario comentario) {
     
-        for(Postagem p : listaPostagem) {
-            if(p.id == post.id) {
-                for(Comentario c : p.comentarios) {
-                    if(c.id = comentario.id) {
-                        if(c.user.id == user.id) {
-                            p.comentario.remove(c);
-                            return true;
+        for(Usuario s : listaUsuarios) {
+            for(Postagem p : s.postagens) {
+                if(p.id == post.id) {
+                    for(Comentario c : p.comentarios) {
+                        if(c.id = comentario.id) {
+                            if(c.user.id == user.id) {
+                                p.comentario.remove(c);
+                                return true;
+                            }
                         }
                     }
                 }
