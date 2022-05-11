@@ -1,12 +1,14 @@
 # **Manual de instalação e intruções de uso**
 
-> Desenvolvido por: Guilherme Carvalho Silva, (insira seu nome aqui...)
+> Desenvolvido por: Guilherme Carvalho Silva, Emanuel Pereira, Denilson Kersting Araujo, (insira seu nome aqui...)
 
 # Primeiros passos
 
 ## Instalação para Windows:
 
 _Para facilitar o processo de instalação no windows, instale o wsl. Você pode verificar o passo-a-passo completo [aqui](https://pureinfotech.com/install-windows-subsystem-linux-2-windows-10/)._
+
+_(reinicie o computador para as mudanças surtirem efeito)_
 
 ### 1. Instalando o node
 
@@ -38,7 +40,23 @@ por fim, instale o npm:
 sudo apt install npm
 ```
 
-_(reinicie o computador para as mudanças surtirem efeito)_
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+```sh
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+```
+
+```sh
+## install node 16
+nvm install 16
+```
+
+```sh
+nvm use 16
+```
 
 <br/>
 
