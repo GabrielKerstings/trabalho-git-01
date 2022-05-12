@@ -49,7 +49,7 @@ public class Main {
 
     public static void menu() {
         System.out.println("Bem vindo! \n Escolha a opção desejada: ");
-        System.out.println("1 - Cadastrar Usuário \n2 - Criar publicação\n3- Fazer comentário \n4 - Escluir Publicação");
+        System.out.println("1 - Cadastrar Usuário \n2 - Criar publicação\n3- Fazer comentário \n4 - Excluir Publicação");
         System.out.println("5 - Excluir comentário");
     }
 }
